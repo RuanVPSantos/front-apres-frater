@@ -26,7 +26,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter>
+      <h1>Asdf</h1>
+      {/* <BrowserRouter>
         <Routes>
           <Route path='/slideshow' element={<Slideshow />} />
           <Route path="/" element={<Layout />}>
@@ -34,7 +35,7 @@ function App() {
             <Route path="obra/:id" element={<ObraDetails />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </ThemeProvider>
   );
 }

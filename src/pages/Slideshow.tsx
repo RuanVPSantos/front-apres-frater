@@ -1,10 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Typography } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_API_URL;
-const AUDIO_URL = '/assets/audios/audio.mp3'; // Substitua pelo caminho real do áudio
 
 interface RandomImage {
   imageUrl: string;
@@ -20,7 +19,6 @@ export default function Slideshow() {
   const [nextImage, setNextImage] = useState<RandomImage | null>(null);
   const [key, setKey] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const fetchRandomImage = async () => {
     try {
@@ -82,20 +80,11 @@ export default function Slideshow() {
     return () => clearInterval(interval);
   }, [isLoading, nextImage]);
 
-  useEffect(() => {
-    // Iniciar áudio automaticamente quando o componente for montado
-    if (audioRef.current) {
-      audioRef.current.volume = 0.5; // Ajuste o volume se necessário
-      audioRef.current.play().catch(err => console.error('Erro ao reproduzir áudio:', err));
-    }
-  }, []);
-
   if (!currentImage) return <Typography>Carregando...</Typography>;
 
   return (
     <div className="slideshow-container">
       {/* Áudio oculto que toca automaticamente */}
-      <audio ref={audioRef} src={AUDIO_URL} loop />
 
       <AnimatePresence mode="wait">
         <motion.img
