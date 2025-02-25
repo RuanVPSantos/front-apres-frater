@@ -1,23 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + React + TS</title>
+  <title>Apresentação Frater</title>
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-  <audio id="bg-music" src="/assets/audios/audio.mp3" autoplay loop muted></audio>
+  <audio muted id="music" src="/audio/musica.mp3"></audio>
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const audio = document.getElementById('bg-music');
+    document.body.addEventListener('click', () => {
+      const audio = document.getElementById('music');
       audio.muted = false;
+      audio.play();
     });
   </script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 
 </body>
 
