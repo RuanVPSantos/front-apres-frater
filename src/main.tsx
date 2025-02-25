@@ -5,7 +5,6 @@ import './index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <h1>Asdf</h1>
-    {/* <App /> */}
+    <App />
   </StrictMode>
 );
