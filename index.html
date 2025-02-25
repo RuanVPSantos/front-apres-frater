@@ -9,5 +9,13 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <audio id="bg-music" src="/audio/musica.mp3" autoplay loop muted></audio>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bg-music');
+    audio.muted = false;
+  });
+</script>
+
   </body>
 </html>
