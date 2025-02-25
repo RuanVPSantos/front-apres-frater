@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_API_URL;
-const AUDIO_URL = '../src/assets/audios/audio.mp3'; // Substitua pelo caminho real do áudio
+const AUDIO_URL = '/assets/audios/audio.mp3'; // Substitua pelo caminho real do áudio
 
 interface RandomImage {
   imageUrl: string;
